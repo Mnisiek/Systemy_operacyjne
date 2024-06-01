@@ -1,0 +1,40 @@
+========================================================================
+Autor: Michał Śliż,                               Kraków, 18.04.2023
+========================================================================
+
+Katalog zawiera jeden plik źródłowy.
+
+Program ilusturuje zagadnienie Producenta i Konsumenta z wykorzystaniem potoków nienazwanych.
+Producent pobiera dane z pliku tekstowego i przesyła je do potoku, a Konsument
+pobiera dane z tego samego potoku i zapisuje je do pliku tekstowego.
+
+Program przyjmuje dwa argumenty podane przez użytkownika: nazwę pliku wejściowego i nazwę pliku wyjściowego.
+Domyślne argumenty wywołania są zdefiniowane jako zmienne w pliku Makefile.
+W celu użycia innych nazw plików należy zmienić wartości zmiennych
+WEJSCIE i WYJSCIE w pliku Makefile lub nadpisać te zmienne przy wywoływaniu programu.
+
+
+* Jak uruchomić programy:
+=========================
+
+Katalog zawiera program Makefile do kompilacji, linkowania
+i uruchamiania powyższych programów, a także czyszczenia katalogu 
+i jego archiwizacji.
+
+-> Aby uruchomić program, nalezy wykonac komendę:
+       make run-cw_4
+
+-> Dla pewności, że wykonywane są polecenia zdefiniowane w Makefile,
+     a nie wbudowane polecenia makea, uzyc opcji -r, tzn.
+       make -r run-cw_4
+
+-> Aby porównać zawartość plików wejściowego i wyjściowego, należy wykonać:
+       make compare
+
+-> Aby wyczyscic zawartosc katalogu (usunąć zbędne pliki), należy wykonać:
+       make clean
+
+-> W celu archiwizacji oraz kompresji katalogu należy wykonać:
+       make tar
+
+========================================================================
