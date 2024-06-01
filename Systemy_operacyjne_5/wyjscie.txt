@@ -1,0 +1,1 @@
+Przesylanie danych poprzez FIFO

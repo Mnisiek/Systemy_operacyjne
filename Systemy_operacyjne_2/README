@@ -1,0 +1,32 @@
+========================================================================
+Autor: Michał Śliż,                               Krakow, 29.03.2023
+========================================================================
+
+Katalog zawiera dwa pliki źródłowe i jeden nagłówkowy.
+
+Główny kod programu znajduje się w pliku cw_2.c. Sprawdza on, czy podano właściwą liczbę argumentów wywołania programu, tworzy proces potomny (funkcja fork()), a następnie przy użyciu funkcji systemowej execlp() wywołuje drugi program wypisujący identyfikatory procesu potomnego.
+Programy obsługują błędy funkcji takich jak fork(), waitpid(), execlp().
+
+W pliku nagłówkowym print.h znajduje się deklaracja funkcji print() zdefiniowanej w pliku cw_2_fun.c.
+
+* Jak uruchomić programy:
+=========================
+
+Katalog zawiera program Makefile do kompilacji, linkowania
+i uruchamiania powyzszych programow, a takze czyszczenia katalogu 
+i jego archiwizacji.
+
+-> Aby uruchomić program, nalezy wykonac komende:
+       make run-cw_2
+
+-> Dla pewności, że wykonywane są polecenia zdefiniowane w Makefile,
+     a nie wbudowane polecenia make'a, uzyc opcji -r, tzn.
+       make run-cw_2
+
+-> Aby wyczyscic zawartosc katalogu (usunac zbedne pliki), nalezy wykonac:
+       make clean
+
+-> W celu archiwizacji oraz kompresji katalogu nalezy wykonac:
+       make tar
+
+========================================================================

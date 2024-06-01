@@ -1,0 +1,41 @@
+========================================================================
+Autor: Michał Śliż,                               Kraków, 25.04.2023
+========================================================================
+
+Katalog zawiera trzy pliki źródłowe.
+
+Program ilustruje problem Producenta i Konsumenta z wykorzystaniem potoków nazwanych (FIFO).
+
+W podpunkcie a (uruchomienie programu poleceniem make run-cw_5a) proces macierzysty tworzy
+proces potomny (wykonujący zadanie Konsumenta), który z kolei tworzy swój proces potomny 
+(wykonujący zadanie Producenta).
+Proces macierzysty czeka na ich zakończenie.
+
+W podpunkcie b (uruchomienie programu poleceniem make run-producent_konsument) zostają
+otwarte dwa okna terminala xterm wywołujące programy Producenta i Konsumenta.
+
+
+* Jak uruchomić programy:
+=========================
+
+Katalog zawiera program Makefile do kompilacji, linkowania
+i uruchamiania powyższych programów, a także czyszczenia katalogu 
+i jego archiwizacji.
+
+-> Aby uruchomić program, nalezy wykonac komendę:
+       make run-cw_5a
+
+-> Dla pewności, że wykonywane są polecenia zdefiniowane w Makefile,
+     a nie wbudowane polecenia makea, uzyc opcji -r, tzn.
+       make -r run-cw_5a
+
+-> Aby porównać zawartość plików wejściowego i wyjściowego, należy wykonać:
+       make compare
+
+-> Aby wyczyscic zawartosc katalogu (usunąć zbędne pliki), należy wykonać:
+       make clean
+
+-> W celu archiwizacji oraz kompresji katalogu należy wykonać:
+       make tar
+
+========================================================================

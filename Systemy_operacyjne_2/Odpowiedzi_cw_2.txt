@@ -1,0 +1,5 @@
+Przy n-krotnym wywołaniu funkcji fork-exec powstanie n procesów.
+Wynika to z tego, że po wywołaniu funkcji execlp() proces nie wraca
+z powrotem do pętli (nie ma żadnych swoich dzieci). Powstają jedynie 
+procesy potomne procesu macierzystego.
+

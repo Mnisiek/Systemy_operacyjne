@@ -1,0 +1,50 @@
+========================================================================
+Autor: Michał Śliż,                               Kraków, 16.05.2023
+========================================================================
+
+Katalog zawiera trzy pliki źródłowe, plik nagłówkowy, Makefile i README.
+
+Program ilustruje problem wzajemnego wykluczania procesów z wykorzystaniem
+semaforów nazwanych.
+
+Program główny (cw_6.c), tzw. powielacz, sprawdza poprawność przekazanych
+argumentów wywołania, tworzy plik (z początkową wartością zero), tworzy
+semafor nazwany i w pętli for tworzy swoje procesy potomne, które
+uruchamiają poprzez funkcję execlp() kod programu z pliku cw_6_wykluczanie.c.
+Proces macierzysty czeka na wszystkie swoje procesy potomne, a następnie
+sprawdza czy program wykonał się poprawnie, poprzez porównanie wartości
+zapisanej w pliku z wartością oczekiwaną.
+
+Program cw_6_wykluczanie.c wypisuje adres i wartość semafora przed, w trakcie
+i po sekcji krytycznej, sterowanej poprzez odpowiednie podnoszenie
+i opuszczanie semafora.
+
+Plik biblioteka.h zawiera deklaracje funkcji do pracy z semaforami. Ich
+definicje znajdują się w pliku biblioteka.c
+
+
+
+* Jak uruchomić programy:
+=========================
+
+Katalog zawiera program Makefile do kompilacji, linkowania
+i uruchamiania powyższych programów, a także czyszczenia katalogu 
+i jego archiwizacji.
+W Makefilu zdefiniowane są zmienne przechowujące domyślne argumenty
+wywołania. Można je zmienić, nadpisując wartość tych zmiennych bezpośrednio
+w pliku Makefile albo przy wywołaniu programu.
+
+-> Aby uruchomić program, nalezy wykonac komendę:
+       make run-cw_6
+
+-> Dla pewności, że wykonywane są polecenia zdefiniowane w Makefile,
+     a nie wbudowane polecenia makea, użyć opcji -r, tzn.
+       make -r run-cw_6
+
+-> Aby wyczyścić zawartość katalogu (usunąć zbędne pliki), należy wykonać:
+       make clean
+
+-> W celu archiwizacji oraz kompresji katalogu należy wykonać:
+       make tar
+
+========================================================================

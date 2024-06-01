@@ -1,0 +1,47 @@
+========================================================================
+Autor: Michał Śliż,                               Kraków, 31.05.2023
+========================================================================
+
+Katalog zawiera pięć plików źródłowych, z których dwa to biblioteki do pracy
+z semaforami i pamięcią dzieloną standardu POSIX.
+
+Program ilusturuje problem Producenta i Konsumenta z wykorzystaniem pamięci dzielonej
+i semaforów standardu POSIX. Program korzysta z bufora cyklicznego, umieszczonego
+w pamięci dzielonej, do której dostęp jest synchronizowany semaforami.
+
+Producent pobiera dane z pliku tekstowego i wstawia je do pamięci dzielonej, a Konsument
+z tej samej pamięci odczytuje dane i następnie zapisuje je do pliku tekstowego.
+
+Program przyjmuje sześć argumentów podanych przez użytkownika:
+nazwa_programu_producenta, nazwa_programu_konsumenta, nazwa_semafora_producenta,
+nazwa_semafora_konsumenta, nazwa_pliku_wejściowego, nazwa_pliku_wyjściowego.
+
+Domyślne argumenty wywołania są zdefiniowane jako zmienne w pliku Makefile.
+W celu użycia innych nazw plików należy zmienić wartości zmiennych w pliku
+Makefile lub nadpisać te zmienne przy wywoływaniu programu.
+
+
+* Jak uruchomić programy:
+=========================
+
+Katalog zawiera program Makefile do kompilacji, linkowania
+i uruchamiania powyższych programów, a także czyszczenia katalogu 
+i jego archiwizacji.
+
+-> Aby uruchomić program, nalezy wykonac komendę:
+       make run-cw_7
+
+-> Dla pewności, że wykonywane są polecenia zdefiniowane w Makefile,
+     a nie wbudowane polecenia makea, uzyc opcji -r, tzn.
+       make -r run-cw_7
+
+-> Aby porównać zawartość plików wejściowego i wyjściowego, należy wykonać:
+       make compare
+
+-> Aby wyczyscic zawartosc katalogu (usunąć zbędne pliki), należy wykonać:
+       make clean
+
+-> W celu archiwizacji oraz kompresji katalogu należy wykonać:
+       make tar
+
+========================================================================

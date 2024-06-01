@@ -1,0 +1,49 @@
+========================================================================
+Autor: Michał Śliż,                               Krakow, 14.06.2023
+========================================================================
+
+* Zawartosc:
+============
+
+Katalog zawiera plik źródłowy, plik Makefile i README.
+
+W programie został zaimplementowany problem wzajemnego wykluczania dla wątków
+z wykorzystaniem muteksow.
+
+Watek wykonujac swoja sekcje prywatna wypisuje odpowiedni komunikat
+po lewej stronie okna konsoli, natomiast bedac w sekcji krytycznej wypisuje
+informacje po prawej stronie.
+Kazdy watek moze kilka razy powtarzac powyzszy cykl.
+Po prawej stronie okna konsoli w danym momencie zglasza sie co najwyzej 
+jeden watek, pozostale natomiast zglaszaja sie po lewej stronie.
+Do zademonstrowania operacji na zasobie dzielonym uzyto globalnej
+zmiennej licznik typu int, zainicjowanej wartoscia 0. Kazdy z watkow na poczatku
+sekcji krytycznej przypisuje jej wartosc do swojego prywatnego licznika.
+Nastepnie zwieksza wartosc tego prywatnego licznika o 1, a po pewnym czasie
+przypisuje jego wartosc wspolnemu licznikowi (globalnemu). Na koncu program sprawdza,
+czy po zakonczeniu dzialania wszystkich watkow wartosc wspolnego licznika
+jest zgodna z oczekiwanym.
+
+Program przyjmuje dwa argumenty wywołania: liczba_watkow, liczba_obiegow_petli.
+Domyślne wartości argumentów są zdefiniowane w pliku Makefile.
+ 
+------------------------------------------------------------------------
+
+* Jak uruchomic program:
+=========================
+
+Katalog zawiera program Makefile do kompilacji i uruchamiania powyzszego programu.
+
+-> Aby skompilować program dotyczący zadania należy wykonać komendę:
+	make all
+
+-> Aby uruchomić program, nalezy wykonac komende:
+	make run threads_num=[liczba wątków] loop_num=[liczba pętli]
+
+-> Aby wyczyscic zawartosc katalogu (usunac zbedne pliki), nalezy wykonac:
+       make clean
+
+-> W celu archiwizacji oraz kompresji katalogu nalezy wykonac:
+       make tar
+
+========================================================================

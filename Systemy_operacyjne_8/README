@@ -1,0 +1,48 @@
+========================================================================
+Autor: Michał Śliż                               Krakow, 31.05.2023
+========================================================================
+
+* Zawartosc:
+============
+
+Katalog zawiera jeden program w jezyku C:
+-----------------------------------------------------------------------
+Poslugujac sie mechanizmem kolejek komunikatow standardu POSIX, program
+przedstawia zadanie typu klient-serwer z mozliwoscia obslugi wielu klientow
+na raz. Proces klienta wysyla do procesu serwera zadanie wykonania dzialania
+arytmetycznego na dwoch liczbach postaci "liczba" "operator" "liczba", 
+gdzie operator to +, -, *, /. Serwer wykonuje dzialanie i odsyla je do klienta.
+Oba procesy wyswietlaja na ekranie odpowiednie komunikaty, w szczegolnosci
+atrybuty kolejek komunikatow zaraz po ich utworzeniu. Serwer dziala w petli 
+nieskonczonej (zakonczenie dzialania CTRL+C), procesy klientow moga zakonczyc
+wysylanie zapytan po otrzymaniu znaku konca pliku EOF (CTRL-D).
+    Program sklada sie z trzech modulow: 
+    1) server.c
+    2) client.c
+    3) msg_queue_library.c, msg_queue_library.h - 
+    biblioteka kolejek komunikatów
+Po uruchomieniu programu nalezy wpisywac zapytania do servera z terminali
+procesow clientow.
+ 
+------------------------------------------------------------------------
+
+* Jak uruchomic program:
+=========================
+
+Katalog zawiera program Makefile do kompilacji,
+i uruchamiania powyzszego programu, a takze czyszczenia katalogu 
+i jego archiwizacji.
+
+-> Aby skompilować program dotyczący zadania należy wykonać komendę:
+	make all
+
+-> Aby uruchomić serwer i  klientow, nalezy wykonac komende:
+	make run 
+
+-> Aby wyczyscic zawartosc katalogu (usunac zbedne pliki), nalezy wykonac:
+    make clean
+
+-> W celu archiwizacji oraz kompresji katalogu nalezy wykonac:
+    make tar
+
+========================================================================

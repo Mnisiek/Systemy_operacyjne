@@ -1,0 +1,5 @@
+Proces adoptujący osierocone procesy:
+systemd(1450)
+
+Przy n-krotnym wywołaniu funkcji fork() powstanie 2^n procesów 
+(2^n - 1 procesów potomnych + 1 proces macierzysty).

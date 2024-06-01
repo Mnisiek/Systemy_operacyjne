@@ -1,0 +1,7 @@
+Katalog zawiera pięć plików źródłowych, po jedenym do każdego podpunktu zadania pierwszego.
+Programy wypisują identyfikatory procesów w systemie Linux, wykorzystują funkcje wait() oraz sleep() (wszystkie programy pisałem i testowałem na systemie Linux Ubuntu 20.04.2.0 działającym na maszynie wirtualnej Oracle VM Virtual Box).
+W celu uruchomienia danego programu należy najpierw rozpakować katalog z programami do wybranego katalogu, a następnie, znajdując się w katalogu z plikami, można uruchomiać je w terminalu wpisując odpowiednie polecenia. 
+Przykładowo, polecenie make run-cw_1a kompiluje i wywołuje kod zawarty w pliku cw_1a.c. Ogólnie, aby uruchomić program z pliku nazwa.c należy wpisać do terminala make run-nazwa. Szczegóły co do nazw plików znajdują się w pliku Makefile.
+
+Michał Śliż
+21.03.2023

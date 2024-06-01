@@ -1,0 +1,34 @@
+Identyfikatory procesu macierzystego:
+UID = 1000, GID = 1000, PID = 20045, PPID = 20044, PGID = 20044
+Pokolenie 0
+Identyfikatory procesu potomnego:
+UID = 1000, GID = 1000, PID = 20046, PPID = 20045, PGID = 20044
+Pokolenie 1
+Identyfikatory procesu potomnego:
+UID = 1000, GID = 1000, PID = 20047, PPID = 20045, PGID = 20044
+Pokolenie 1
+Identyfikatory procesu potomnego:
+UID = 1000, GID = 1000, PID = 20048, PPID = 20046, PGID = 20044
+Pokolenie 2
+Identyfikatory procesu potomnego:
+UID = 1000, GID = 1000, PID = 20049, PPID = 20045, PGID = 20044
+Pokolenie 2
+Identyfikatory procesu potomnego:
+UID = 1000, GID = 1000, PID = 20050, PPID = 20047, PGID = 20044
+Pokolenie 2
+Identyfikatory procesu potomnego:
+UID = 1000, GID = 1000, PID = 20051, PPID = 20046, PGID = 20044
+Pokolenie 2
+Identyfikatory procesu potomnego:
+UID = 1000, GID = 1000, PID = 20052, PPID = 20048, PGID = 20044
+
+                                (20045, 20044, 20044)
+                                        |
+                                        |
+                                (20046, 20045, 20044)
+                                |               |
+                                |               |
+                    (20047, 20045, 20044)   (20048, 20046, 20044)
+                |               |                  |                      |
+                |               |                  |                      |
+(20049, 20045, 20044)   (20050, 20047, 20044)   (20051, 20046, 20044)   (20052, 20048, 20044)

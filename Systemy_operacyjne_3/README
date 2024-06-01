@@ -1,0 +1,45 @@
+========================================================================
+Autor: Michał Śliż,                               Krakow, 12.04.2023
+========================================================================
+
+Katalog zawiera cztery pliki źródłowe z programami, plik Makefile i README.
+
+Pierwszy program (cw_3a) ustawia obsługę wybranego sygnału na trzy sposoby: domyślny, ignorowanie, wywołanie funkcji obsługi sygnału. 
+Program przyjmuje dwa argumenty podane przez użytkownika: numer_sygnału, sposób_obsługi_sygnału.
+
+Drugi program (cw_3b) uruchamia w procesie potomnym pierwszy program (funkcja execlp()), a następnie wysyła do niego sygnały (funkcja kill()).
+Program przyjmuje trzy argumenty podane przez użytkownika: nazwa_uruchamianego_programu numer_sygnału, sposób_obsługi_sygnału.
+
+Trzeci program (cw_3c.c) uruchamia w swoim procesie potomnym inny program
+(cw_3c_fun.c), który z kolei tworzy kilka procesów potomnych uruchamiających
+program z zadania pierwszego. Program przyjmuje trzy argumenty podane przez użytkownika: nazwa_uruchamianego_programu numer_sygnału, sposób_obsługi_sygnału.
+
+Czwarty program (cw_3c_fun.c) jest programem pomocniczym do podpunktu c.
+Ustawia ignorowanie sygnału, staje się liderem swojej grupy procesów i tworzy kilka procesów potomnych.
+
+
+* Jak uruchomić programy:
+=========================
+
+Katalog zawiera program Makefile do kompilacji, linkowania
+i uruchamiania powyższych programów, a także czyszczenia katalogu 
+i jego archiwizacji.
+
+-> Aby uruchomić program, nalezy wykonac komende:
+       make run-cw_3a ARGS='numer_sygnału opcja_obsługi_sygnału'
+       make run-cw_3b ARGS='nazwa_uruchamianego_programu numer_sygnału opcja_obsługi_sygnału'
+       make run_cw_3c ARGS='nazwa_uruchamianego_programu numer_sygnału opcja_obsługi_sygnału'
+
+-> Dla pewności, że wykonywane są polecenia zdefiniowane w Makefile,
+     a nie wbudowane polecenia makea, uzyc opcji -r, tzn.
+       make -r run-cw_3a ARGS="numer_sygnału, sposób_obsługi_sygnału"
+       make -r run-cw_3b ARGS='nazwa_uruchamianego_programu numer_sygnału opcja_obsługi_sygnału'
+       make -r run_cw_3c ARGS='nazwa_uruchamianego_programu numer_sygnału opcja_obsługi_sygnału'
+
+-> Aby wyczyscic zawartosc katalogu (usunac zbedne pliki), nalezy wykonac:
+       make clean
+
+-> W celu archiwizacji oraz kompresji katalogu nalezy wykonac:
+       make tar
+
+========================================================================
